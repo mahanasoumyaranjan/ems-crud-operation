@@ -21,11 +21,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/list")
+    @GetMapping("/lists")
     public String listEmployees(Model model) {
         List<Employee> list = employeeService.list();
         model.addAttribute("list", list);
-        return "employee/list";
+        return "list";
     }
 
     @GetMapping("/")
@@ -37,31 +37,31 @@ public class EmployeeController {
     public String showNewForm(Model model) {
         Employee employee = new Employee();
         model.addAttribute("employee", employee);
-        return "employee/form";
+        return "form";
     }
 
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("employee") Employee employee) {
         employeeService.save(employee);
-        return "redirect:/employee/list";
+        return "redirect:/employee/lists";
     }
 
     @GetMapping("/edit")
     public String showEditForm(@RequestParam("id") int id, Model model) {
         Employee employee = employeeService.get(id);
         model.addAttribute("employee", employee);
-        return "employee/form";
+        return "form";
     }
 
     @PostMapping("/update")
     public String updateEmployee(@ModelAttribute("employee") Employee employee) {
         employeeService.update(employee);
-        return "redirect:/employee/list";
+        return "redirect:/employee/lists";
     }
 
     @GetMapping("/delete")
     public String deleteEmployee(@RequestParam("id") int id) {
         employeeService.delete(id);
-        return "redirect:/employee/list";
+        return "redirect:/employee/lists";
     }
 }
