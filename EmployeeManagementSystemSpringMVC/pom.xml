@@ -47,11 +47,7 @@
             <artifactId>hibernate-validator</artifactId>
             <version>6.2.0.Final</version>
         </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.200</version>
-        </dependency>
+        
         
         <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 <dependency>
