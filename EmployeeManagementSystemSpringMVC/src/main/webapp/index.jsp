@@ -2,6 +2,6 @@
 <body>
 <h2>Hello World!</h2>
 
-<a href="/employee/list">List</a>
+<a href="employee/lists">List</a>
 </body>
 </html>
